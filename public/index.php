@@ -1,8 +1,8 @@
 <?php
 // Connexion à la base de données
-$dbname="testmini";
-$dbuser="root";
-$dbpwd="n$37HNUCT";
+$dbname="<db-name>";
+$dbuser="<db-user>";
+$dbpwd="<db-password>";
 try
 {
     $bdd = new PDO('mysql:host=localhost;dbname='.$dbname, $dbuser, $dbpwd);
