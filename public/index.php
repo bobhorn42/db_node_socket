@@ -1,8 +1,5 @@
 <?php
-// Connexion à la base de données
-$dbname="<db-name>";
-$dbuser="<db-user>";
-$dbpwd="<db-password>";
+include_once "dbconnect.php";
 try
 {
     $bdd = new PDO('mysql:host=localhost;dbname='.$dbname, $dbuser, $dbpwd);
