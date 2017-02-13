@@ -1,4 +1,4 @@
-var socket = io();
+var socket = io.connect( 'http://localhost:8080' );
 var i, j;
 
 /*** Gestion des événements ***/
