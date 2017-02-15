@@ -3,8 +3,10 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-// On gère les requêtes HTTP des utilisateurs en leur renvoyant les fichiers du dossier 'public'
-app.use("/", express.static(__dirname + "/public"));
+// Server listens on port 8080
+http.listen(8080, function(){
+  console.log('Server is listening on *:8080');
+});
 
 io.on('connection', function (socket) {
 
@@ -19,20 +21,15 @@ io.on('connection', function (socket) {
   /**
    * Réception de l'événement 'newmessage' et réémission vers l'utilisateur
    */
-  socket.on('newmessage', function (message) {
-	  console.log( 'Message received: ' + message );
-	  socket.emit('newmessage', message);
+  socket.on('newmessage', function (data) {
+	  console.log( 'Message received: ' + data );
+	  socket.emit('newmessage', data);
   });
   
   /**
    * Réception de l'événement 'catch'
    */
-  socket.on('catch', function (message) {
-	  console.log( 'Catch: ' + message );
+  socket.on('catch', function (data) {
+	  console.log( 'Catch: ' + data );
   });
-});
-
-// On lance le serveur en écoutant les connexions arrivant sur le port 3000
-http.listen(8080, function(){
-  console.log('Server is listening on *:8080');
 });
