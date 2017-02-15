@@ -33,8 +33,8 @@ catch(Exception $e)
 			<?php endforeach; ?>
 		</ul>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-	<script src="../node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+	<script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
 	<script src="client.js"></script>
   </body>
 </html>
