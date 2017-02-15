@@ -10,7 +10,7 @@
 		die('Erreur : '.$e->getMessage());
 	}
 
-	$query = $bdd->prepare( 'INSERT INTO message VALUES( \'\', :message )' );
+	$query = $bdd->prepare( 'INSERT INTO message VALUES( 0, :message )' );
 	$query->execute( array( 'message' => $_POST[ 'message' ]; ) );
 	
 ?>
